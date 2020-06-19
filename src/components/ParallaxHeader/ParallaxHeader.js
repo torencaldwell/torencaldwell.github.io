@@ -80,7 +80,12 @@ export const ParallaxHeader = () => {
                     zIndex: 0
                 }}
             />
-            <div style={ Style.headerContent }>
+            <div
+                style={{
+                    ...Style.headerContent,
+                    transform: `translateY(-${window.scrollY / 3}px)`
+                }}
+            >
                 <h1 style={ Style.name }>Toren Caldwell</h1>
                 <div style={ Style.verticalRule } />
                 <div style={ Style.headerLinksContainer }>

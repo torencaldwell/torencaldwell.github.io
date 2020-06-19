@@ -14,7 +14,6 @@ const Style = {
         flexDirection: 'row',
         height: '200px',
         position: 'fixed',
-        transform: 'tranlateZ(-1px)',
         zIndex: 2,
     },
     headerLinksContainer: {
