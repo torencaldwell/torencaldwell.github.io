@@ -22,7 +22,7 @@ var headerImageSize = {
 };
 
 export const ParallaxHeader = () => {
-    const [headerOpacity, setHeaderOpacity] = useState(1.0);
+    const [headerBlur, setHeaderBlur] = useState(0);
     const [headerSize, setHeaderSize] = useState(['auto', 'auto']); //height, width
 
     const onHeaderImgLoad = ({target: image}) => {
@@ -45,7 +45,10 @@ export const ParallaxHeader = () => {
     }
 
     useEffect(() => {
-        const onScroll = () => setHeaderOpacity(1.0 - (window.scrollY / 400));
+        const onScroll = () => {
+            setHeaderBlur((window.scrollY / 200));
+            console.log(window.scrollY/10);
+        };
 
         window.addEventListener('scroll', onScroll);
         window.addEventListener('resize', onWindowResize);
@@ -63,21 +66,11 @@ export const ParallaxHeader = () => {
                 onLoad={ onHeaderImgLoad }
                 style={{
                     height: headerSize[0],
-                    opacity: `${headerOpacity}`,
+                    filter: `blur(${headerBlur}px)`,
                     position: 'fixed',
                     transform: 'translateY(200)',
                     width: headerSize[1],
                     zIndex: 1
-                }}
-            />
-            <img
-                src={ require('../../assets/headerBackgroundBlur.jpg') }
-                style={{
-                    height: headerSize[0],
-                    position: 'fixed',
-                    transform: 'translateY(200)',
-                    width: headerSize[1],
-                    zIndex: 0
                 }}
             />
             <div
