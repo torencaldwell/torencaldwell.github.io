@@ -31,11 +31,13 @@ const Style = {
         cursor: 'pointer',
         color: colors.secondaryUltralight,
     },
-    name: {
-        display: 'flex',
+    nameContainer: {
         alignItems: 'center',
-        color: colors.white,
-        padding: '5px',
+        display: 'flex',
+        padding: '40px 5px 5px 5px',
+    },
+    name: {
+        fontSize: 50,
     },
     verticalRule: {
         borderLeft: `2px solid ${ colors.white }`,

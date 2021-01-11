@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import Style from './ParallaxHeader.style';
-
-
-const HeaderLink = ({ href, children }) => {
-    const [linkStyle, setLinkStyle] = useState(Style.link);
-
-    return (
-        <p
-            style={ linkStyle }
-            onMouseEnter={ () => setLinkStyle(Style.linkHover) }
-            onMouseLeave={ () => setLinkStyle(Style.link) }
-        >
-            {children}
-        </p>
-    );
-};
+import { strings } from '../../localization';
+import { links } from '../../links';
+import { SplashText } from 'splash-text';
+import { colors } from '../../theme/colors';
 
 var headerImageSize = {
     height: 0,
     width: 0,
 };
 
+const HeaderLink = ({ id, children }) => {
+    const [linkStyle, setLinkStyle] = useState(Style.link);
+    const element = document.getElementById(id);
+
+    return (
+        <p
+            style={ linkStyle }
+            onMouseEnter={ () => setLinkStyle(Style.linkHover) }
+            onMouseLeave={ () => setLinkStyle(Style.link) }
+            onClick={ () => element.scrollIntoView({ behavior: 'smooth' }) }
+        >
+            {children}
+        </p>
+    );
+};
+
 export const ParallaxHeader = () => {
     const [headerBlur, setHeaderBlur] = useState(0);
-    const [headerSize, setHeaderSize] = useState(['auto', 'auto']); //height, width
+    const [headerSize, setHeaderSize] = useState(['auto', 'auto']);
 
     const onHeaderImgLoad = ({target: image}) => {
         headerImageSize = {
@@ -45,10 +50,7 @@ export const ParallaxHeader = () => {
     }
 
     useEffect(() => {
-        const onScroll = () => {
-            setHeaderBlur((window.scrollY / 200));
-            console.log(window.scrollY/10);
-        };
+        const onScroll = () => setHeaderBlur((window.scrollY / 200));
 
         window.addEventListener('scroll', onScroll);
         window.addEventListener('resize', onWindowResize);
@@ -62,7 +64,7 @@ export const ParallaxHeader = () => {
     return (
         <div style={{ ...Style.headerBackground, height: window.innerHeight }}>
             <img
-                src={ require('../../assets/headerBackground.jpg') }
+                src={ require('../../assets/IMG_3351.jpg') }
                 onLoad={ onHeaderImgLoad }
                 style={{
                     height: headerSize[0],
@@ -78,13 +80,29 @@ export const ParallaxHeader = () => {
                     ...Style.headerContent,
                     transform: `translateY(-${window.scrollY / 3}px)`
                 }}
-            >
-                <h1 style={ Style.name }>Toren Caldwell</h1>
+            >   
+                <div style={ Style.nameContainer } >
+                    <a href={ links('linkedIn') } >
+                        <SplashText
+                            baseColor={ colors.white }
+                            text={ strings('header.name') }
+                            enterColors={[
+                                colors.primary,
+                                colors.tertiary,
+                                colors.white,
+                            ]}
+                            interval={ 200 }
+                            duration={ 2 }
+                            textStyle={ Style.name }
+                        />
+                    </a>
+                </div>
                 <div style={ Style.verticalRule } />
                 <div style={ Style.headerLinksContainer }>
-                    <HeaderLink>Projects</HeaderLink>
-                    <HeaderLink>Resume</HeaderLink>
-                    <HeaderLink>Contact Me</HeaderLink>
+                    <HeaderLink id='about'>{ strings('header.about') }</HeaderLink>
+                    <HeaderLink id='projects'>{ strings('header.projects') }</HeaderLink>
+                    <HeaderLink id='resume'>{ strings('header.resume') }</HeaderLink>
+                    <HeaderLink id='contact'>{ strings('header.contact') }</HeaderLink>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { ParallaxHeader } from './components/ParallaxHeader';
+import { Projects, Resume, Contact, About } from './sections';
 import { colors } from './theme/colors';
 
 const App = () => {
@@ -13,8 +14,10 @@ const App = () => {
         position: 'relative',
         zIndex: 2
       }}>
-        <h1>Buncha Conent's gonna go here</h1>
-        <p>A whole lot of it. promise. gonna be huge. big ol' deal. you'll see.</p>
+        <About />
+        <Projects />
+        <Resume />
+        <Contact />
       </div>
     </div> 
   );
