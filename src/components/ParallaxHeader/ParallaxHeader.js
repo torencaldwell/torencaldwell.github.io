@@ -10,6 +10,8 @@ var headerImageSize = {
     width: 0,
 };
 
+const MAX_BLUR = 4;
+
 const HeaderLink = ({ id, children }) => {
     const [linkStyle, setLinkStyle] = useState(Style.link);
     const element = document.getElementById(id);
@@ -29,6 +31,7 @@ const HeaderLink = ({ id, children }) => {
 export const ParallaxHeader = () => {
     const [headerBlur, setHeaderBlur] = useState(0);
     const [headerSize, setHeaderSize] = useState(['auto', 'auto']);
+    const [windowScrollY, setWindowScrollY] = useState(window.scrollY);
 
     const onHeaderImgLoad = ({target: image}) => {
         headerImageSize = {
@@ -50,7 +53,15 @@ export const ParallaxHeader = () => {
     }
 
     useEffect(() => {
-        const onScroll = () => setHeaderBlur((window.scrollY / 200));
+        const onScroll = () => {
+            setWindowScrollY(window.scrollY);
+            const scrollValue = window.scrollY / 200;
+
+            if (scrollValue <= MAX_BLUR)
+                setHeaderBlur(scrollValue);
+            else
+                setHeaderBlur(MAX_BLUR);
+        };
 
         window.addEventListener('scroll', onScroll);
         window.addEventListener('resize', onWindowResize);
@@ -78,7 +89,7 @@ export const ParallaxHeader = () => {
             <div
                 style={{
                     ...Style.headerContent,
-                    transform: `translateY(-${window.scrollY / 3}px)`
+                    transform: `translateY(-${windowScrollY/2}px)`
                 }}
             >   
                 <div style={ Style.nameContainer } >

@@ -9,6 +9,8 @@
     grey700:               '#EEEEEE',
     white:                 '#FFFFFF',
 
+    midnightBlue:          '#11111F',
+
     primaryUltradark:      '#CF5046',
     primaryDark:           '#CB392D',
     primary:               '#E06C63',

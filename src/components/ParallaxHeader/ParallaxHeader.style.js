@@ -1,9 +1,6 @@
 import { colors } from '../../theme/colors';
 
 const Style = {
-    parallaxHeader: {
-        width: '100%',
-    },
     headerBackground: {
         alignItems: 'center',
         display: 'flex',
@@ -31,13 +28,16 @@ const Style = {
         cursor: 'pointer',
         color: colors.secondaryUltralight,
     },
+    name: {
+        fontSize: 50,
+    },
     nameContainer: {
         alignItems: 'center',
         display: 'flex',
         padding: '40px 5px 5px 5px',
     },
-    name: {
-        fontSize: 50,
+    parallaxHeader: {
+        width: '100%',
     },
     verticalRule: {
         borderLeft: `2px solid ${ colors.white }`,
