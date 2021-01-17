@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "54cc19d8d741f823656213ed062416b1",
+    "revision": "38a51f219425f3f0f955b17a6582d468",
     "url": "/index.html"
   },
   {
-    "revision": "c189944af8bab932e8c5",
+    "revision": "e334d344d97c15c45e14",
     "url": "/static/css/main.a4e1953d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.698aa9dc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c189944af8bab932e8c5",
-    "url": "/static/js/main.40a7a507.chunk.js"
+    "revision": "e334d344d97c15c45e14",
+    "url": "/static/js/main.a0b2b60c.chunk.js"
   },
   {
     "revision": "b4ba650b238755144e2a",
@@ -26,5 +26,17 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "751c214bb7ad0dfbdda4f01384155583",
     "url": "/static/media/IMG_3351.751c214b.jpg"
+  },
+  {
+    "revision": "7da46461201af1cc06bf05741ee6f08e",
+    "url": "/static/media/hah_indoor.7da46461.png"
+  },
+  {
+    "revision": "e35943ac376cb278c92804962ebd9dbd",
+    "url": "/static/media/hah_map.e35943ac.png"
+  },
+  {
+    "revision": "dfa85521c8182b319c4b69d23a569c69",
+    "url": "/static/media/hah_splash.dfa85521.png"
   }
 ]);
