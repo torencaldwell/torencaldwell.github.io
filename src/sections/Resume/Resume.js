@@ -4,8 +4,8 @@ import { SectionContainer } from '../../components/SectionContainer';
 export const Resume = () => {
     return (
         <SectionContainer id='resume'>
-            <h1>Resume</h1>
-            <p>This is where the resume will go</p>
+            <h1>Résumé</h1>
+            <p>This is where the résumé will go</p>
         </SectionContainer>
     );
 }

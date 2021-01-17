@@ -4,6 +4,7 @@ import { strings } from '../../localization';
 import { links } from '../../links';
 import { SplashText } from 'splash-text';
 import { colors } from '../../theme/colors';
+import { headerBackground } from '../../images';
 
 var headerImageSize = {
     height: 0,
@@ -75,7 +76,7 @@ export const ParallaxHeader = () => {
     return (
         <div style={{ ...Style.headerBackground, height: window.innerHeight }}>
             <img
-                src={ require('../../assets/IMG_3351.jpg') }
+                src={ headerBackground }
                 onLoad={ onHeaderImgLoad }
                 style={{
                     height: headerSize[0],

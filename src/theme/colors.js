@@ -8,8 +8,9 @@
     grey600:               '#CCCCCC',
     grey700:               '#EEEEEE',
     white:                 '#FFFFFF',
+    transparent:           '#00000000',
 
-    midnightBlue:          '#11111F',
+    midnightBlue:          '#11111F99',
 
     primaryUltradark:      '#CF5046',
     primaryDark:           '#CB392D',
@@ -27,5 +28,11 @@
     tertiaryDark:          '#CF8846',
     tertiary:              '#E09F63',
     tertiaryLight:         '#F4BD8B',
-    tertiaryUltralight:    '#FFD8B4'
+    tertiaryUltralight:    '#FFD8B4',
+
+    gitOrange:             '#F1502F',
+    gitOrangeLight:        '#F2927E',
+
+    npmRed:                '#CC3534',
+    npmRedLight:           '#DE7B7A',
  }
